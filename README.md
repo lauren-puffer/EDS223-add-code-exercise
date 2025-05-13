@@ -8,14 +8,13 @@ This repository contains a coding exercise that serves as a prerequisite for obt
 1. Fork this repository to your personal GitHub account
 2. Clone your forked repository to your local machine
 3. Create a new R project using the cloned repository
-4. Open and complete the .qmd file, following all prompts and instructions
-5. Commit and push your changes back to your GitHub repository
+4. Open and complete the exercise.qmd file, following all prompts and instructions
+5. Commit and push your changes to your GitHub repository
 6.  Email your submission to aradams@ucsb.edu with:
       - Subject line: "EDS223 Coding Exercise Submission"
       - Your name and student status (Bren or non-Bren)
       - Link to your public GitHub repository
   
-
 
 Thank you for your interest in EDS 223! 
 
