@@ -1,4 +1,4 @@
-# EDS223 Exercise for non-MEDS Students
+# EDS223 Exercise for non-MEDS students
 
 ## Overview
 This repository contains a coding exercise that serves as a prerequisite for obtaining an add code for EDS 223. The exercise is designed to assess your proficiency with R and GitHub, which are essential tools we'll use throughout the course. If you are a Bren Student and space permits, sufficiently completing this exercise will grant you an add code for this course. If you are a non - Bren student, completing this exercise will grant you a spot on the waitlist for the course. If space permits **after** Bren students have been added, you will receive an add code in September. 
