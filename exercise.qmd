@@ -1,0 +1,66 @@
+---
+title: "Add Code Eligibility Coding Exercise"
+format: html
+editor: visual
+---
+
+## Instructions
+
+Run the following code chunks and complete all necessary prompts with your own code.
+
+## Setup
+
+```{r load-packages}
+library(tidyverse)
+library(palmerpenguins)
+library(ggplot2)
+library(dplyr)
+```
+
+## Data Exploration
+
+Run the following code cell to explore the data a bit.
+
+```{r data-exploration}
+
+# Examine the structure of the dataset
+str(penguins)
+glimpse(penguins)
+
+# Generate summary statistics
+summary(penguins)
+
+```
+
+## Data Cleaning
+
+Complete the following data cleaning steps:
+
+1.  Remove observations with missing values
+2.  Create a column called `length_mass` that measures the length to mass ratio of each penguin.
+
+```{r data-cleaning}
+
+# Remove missing values
+
+
+
+# Create length_mass column that measures length to mass ratio for each penguin
+
+```
+
+## Data Visualization
+
+Use ggplot to make a visualization of your choice with the penguin data. Be sure you include the following in your visualization:
+
+-   An updated title
+
+-   Updated axis labels
+
+-   A color palette/ colors of your choosing (not default ggplot colors)
+
+```{r data-viz}
+
+```
+
+That's it! Head back to the README on the Github repo for submission instructions.
