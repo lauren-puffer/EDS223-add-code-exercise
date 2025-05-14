@@ -6,7 +6,7 @@ editor: visual
 
 ## Instructions
 
-Run the following code chunks and complete all necessary prompts with your own code.
+Run the following code chunks and complete all necessary prompts with your own code. Once finished, follow the submission instructions on the Github Repository's README.
 
 ## Setup
 
@@ -23,21 +23,24 @@ Run the following code cell to explore the data a bit.
 
 ```{r data-exploration}
 
+
+# Create palmer penguins dataframe
+penguins_df <- penguins
 # Examine the structure of the dataset
-str(penguins)
-glimpse(penguins)
+str(penguins_df)
+glimpse(penguins_df)
 
 # Generate summary statistics
-summary(penguins)
+summary(penguins_df)
 
 ```
 
 ## Data Cleaning
 
-Complete the following data cleaning steps:
+Complete the following data cleaning steps in the `penguins_df` dataframe:
 
 1.  Remove observations with missing values
-2.  Create a column called `length_mass` that measures the length to mass ratio of each penguin.
+2.  Create a new column in `penguins_df`called `length_mass` that measures the length to mass ratio of each penguin.
 
 ```{r data-cleaning}
 
@@ -51,13 +54,15 @@ Complete the following data cleaning steps:
 
 ## Data Visualization
 
-Use ggplot to make a visualization of your choice with the penguin data. Be sure you include the following in your visualization:
+Use `ggplot` to make a visualization of your choice with the penguin data. Be sure you include the following in your visualization:
 
 -   An updated title
 
 -   Updated axis labels
 
 -   A color palette/ colors of your choosing (not default ggplot colors)
+
+-   Comments!
 
 ```{r data-viz}
 
