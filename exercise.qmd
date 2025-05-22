@@ -15,6 +15,8 @@ library(tidyverse)
 library(palmerpenguins)
 library(ggplot2)
 library(dplyr)
+library(janitor) #added this by my own preference
+library(stringr)#for better cpations
 ```
 
 ## Data Exploration
@@ -45,11 +47,16 @@ Complete the following data cleaning steps in the `penguins_df` dataframe:
 ```{r data-cleaning}
 
 # Remove missing values
-
-
+penguins_df_clean <- penguins_df |>
+  clean_names()|>
+  drop_na()
+#now has 333 observations instead of 344
 
 # Create length_mass column that measures length to mass ratio for each penguin
 
+#using flipper length
+penguins_df_length_mass <- penguins_df_clean |>
+  mutate(length_mass = flipper_length_mm / body_mass_g)
 ```
 
 ## Data Visualization
@@ -66,6 +73,50 @@ Use `ggplot` to make a visualization of your choice with the penguin data. Be su
 
 ```{r data-viz}
 
+flip_mass_sex_graph <- ggplot(data = penguins_df_length_mass, 
+                              aes(x = sex, y = length_mass, 
+                                  fill=sex)) +
+  geom_bar(stat = "summary", fun = "mean") +
+    scale_fill_brewer(palette = "Dark2") + 
+  labs(title = "Flipper Length to Mass Ratio by Sex", 
+       x = "Sex", 
+       y = "Flipper Length:Body Mass (mm:g)") +
+
+  theme_classic() +
+  theme(
+    legend.position = "none",
+    plot.margin = margin(t = 10, r = 10, b = 10, l = 10)
+  )
+
+
+flip_mass_sex_graph
+                                
 ```
+
+**Comments:** Females tend to have higher flipper length to body mass ratios on average compared to males. The tendency to have longer flippers could be related to sexual dichotomy of swimming.
+
+**Bonus graph!**
+
+Creating a graph showing relationship between bill length and flipper length.
+
+```{r}
+
+#create df with just gentoo penguins
+gentoo_df <- penguins_df_clean |>
+  filter(species == "Gentoo")
+
+#create a line graph of bill and flipper length
+gent_flip_bill <- ggplot(data = gentoo_df, 
+                         aes( x= bill_length_mm, y = flipper_length_mm))+
+  geom_smooth() + #apply smoothing to show trend 
+  theme_classic() +
+  labs(title = "Gentoo Bill and Flipper Length", 
+       x = "Bill Length (mm)", 
+       y = "Flipper Length (mm)")
+
+gent_flip_bill
+```
+
+**Comments:** Bill and flipper length seem positively correlated until flipper length reaches \~230mm and levels out as bill length continues to increase. This suggests a maximum bill length of around 230mm for Gentoo penguins.
 
 That's it! Head back to the README on the Github repo for submission instructions.
